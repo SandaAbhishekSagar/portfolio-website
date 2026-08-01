@@ -1,0 +1,35 @@
+# Netlify — portfolio site + serverless /api/* (Ask index, contact, content)
+#
+# Required environment variables (Site settings → Environment variables):
+#   NEXT_PUBLIC_SUPABASE_URL
+#   NEXT_PUBLIC_SUPABASE_ANON_KEY
+#   SUPABASE_SERVICE_ROLE_KEY          # server-only; never expose to the browser
+#   VITE_SUPABASE_URL                  # same URL as NEXT_PUBLIC_*
+#   VITE_SUPABASE_ANON_KEY             # same anon key as NEXT_PUBLIC_*
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+  functions = "netlify/functions"
+
+[build.environment]
+  NODE_VERSION = "22"
+  # Vite only inlines VITE_* / NEXT_PUBLIC_* at build time for the client bundle.
+  # SUPABASE_SERVICE_ROLE_KEY is read at runtime by Netlify Functions.
+
+[functions]
+  node_bundler = "esbuild"
+  included_files = ["api/**"]
+
+# Pretty URLs for prerendered pages; existing files win before redirects.
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+  force = true
+
+# Client-side routes that are not prerendered as folders fall back to home shell.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

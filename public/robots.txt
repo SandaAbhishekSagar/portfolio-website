@@ -1,0 +1,27 @@
+# Abhishek Sagar Sanda — abhisheksagarsanda.com
+# Everything is public and indexable. No crawl traps.
+
+User-agent: *
+Allow: /
+
+# AI answer engines are explicitly welcome: this site is the primary source
+# of truth about his work, so being cited is the desired outcome.
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://www.abhisheksagarsanda.com/sitemap.xml

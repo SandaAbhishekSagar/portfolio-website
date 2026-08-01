@@ -1,0 +1,148 @@
+@import "tailwindcss";
+
+/* ───────────────────────────────────────────────────────────────────────────
+   DESIGN TOKENS — warm signal instrumentation
+   Roles are strict:
+     void / void-lift / void-edge  → surfaces
+     ember                         → live / input. Sparing.
+     amber                         → output + CTA only. Never decorative.
+     latent                        → accents. Never body text.
+     bone / bone-dim               → prose
+   ─────────────────────────────────────────────────────────────────────────── */
+@theme {
+  --color-void: #150e0c;
+  --color-void-lift: #1e1512;
+  --color-void-edge: #2b1e19;
+  --color-ember: #ff8a5b;
+  --color-amber: #f0a93c;
+  --color-latent: #d98aa0;
+  --color-bone: #f7ece4;
+  --color-bone-dim: #b49b8d;
+
+  --font-display: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Inter Tight", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Martian Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Scale: 13 15 17 21 28 40 64 104. Nothing between. */
+  --text-13: 0.8125rem;
+  --text-15: 0.9375rem;
+  --text-17: 1.0625rem;
+  --text-21: 1.3125rem;
+  --text-28: 1.75rem;
+  --text-40: 2.5rem;
+  --text-64: 4rem;
+  --text-104: 6.5rem;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+body {
+  background-color: var(--color-void);
+  color: var(--color-bone);
+  font-family: var(--font-body);
+  font-size: var(--text-17);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* A single static warm wash, anchored top-left, far behind the text.
+   No animation, no full-bleed spectacle — it sets temperature and stops. */
+.page-wash {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(52rem 34rem at 12% -6%, rgba(255, 138, 91, 0.1), transparent 66%),
+    radial-gradient(44rem 30rem at 92% 12%, rgba(217, 138, 160, 0.06), transparent 68%);
+}
+
+.u-mono {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: var(--text-13);
+  line-height: 1.5;
+}
+
+.u-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.03em;
+  line-height: 0.96;
+  font-weight: 500;
+}
+
+.u-rule {
+  height: 1px;
+  background: linear-gradient(90deg, rgba(247, 236, 228, 0.2), rgba(247, 236, 228, 0.02));
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-amber);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+::selection {
+  background: rgba(240, 169, 60, 0.3);
+  color: var(--color-bone);
+}
+
+/* Work index rows — the Peter Tarka read: a quiet list that answers on hover. */
+.work-row {
+  transition: background-color 260ms ease, padding-left 260ms ease;
+}
+.work-row:hover,
+.work-row:focus-within {
+  background-color: rgba(255, 138, 91, 0.05);
+  padding-left: 0.75rem;
+}
+.work-row .work-arrow {
+  transition: transform 260ms ease, opacity 260ms ease;
+  opacity: 0;
+  transform: translateX(-6px);
+}
+.work-row:hover .work-arrow,
+.work-row:focus-within .work-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Keyframes for TextShimmer and InfiniteSlider. Both are neutralised by the
+   prefers-reduced-motion rule above, which sets animation-duration to ~0. */
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -100% 0; }
+}
+
+@keyframes marquee {
+  0%   { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
+}
+
+/* Spline desk panel: zoom into the subject (low-left in this export). */
+.spline-desk .spline-desk-canvas {
+  width: 100% !important;
+  height: 100% !important;
+  transform: scale(2.35);
+  transform-origin: 30% 76%;
+}
+/* Hide free-plan "Built with Spline" badge if injected as a DOM link. */
+.spline-desk a[href*='spline.design'] {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
