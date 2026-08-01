@@ -1,4 +1,4 @@
-import handler from '../../api/ask.js';
-import { asNetlifyHandler } from './_vercel-bridge.mjs';
+import vercelHandler from '../../api/ask.js';
+import { asNetlifyHandler } from '../lib/vercel-bridge.mjs';
 
-export const handler = asNetlifyHandler(handler);
+export const handler = asNetlifyHandler(vercelHandler);
