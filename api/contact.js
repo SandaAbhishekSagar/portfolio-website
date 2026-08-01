@@ -1,4 +1,5 @@
 import supabase from './db-client.js';
+import { notifyInquiry } from './notify-inquiry.js';
 
 export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -20,12 +21,27 @@ export default async function handler(req, res) {
     if (message.length < 10)
       return res.status(400).json({ error: 'Add a line or two about the role.' });
 
+    const created_at = new Date().toISOString();
     const { data, error } = await supabase
       .from('inquiries')
-      .insert({ name, email, company, message, created_at: new Date().toISOString() })
+      .insert({ name, email, company, message, created_at })
       .select('id, created_at')
       .single();
     if (error) throw error;
+
+    // Never fail the form if email delivery fails — the row is already saved.
+    try {
+      await notifyInquiry({
+        id: data.id,
+        name,
+        email,
+        company,
+        message,
+        created_at: data.created_at || created_at,
+      });
+    } catch (notifyErr) {
+      console.error('contact: notify failed', notifyErr);
+    }
 
     return res.status(201).json({ ok: true, id: data.id });
   } catch (err) {
