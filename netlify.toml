@@ -19,7 +19,7 @@
 
 [functions]
   node_bundler = "esbuild"
-  included_files = ["api/**"]
+  included_files = ["api/**", "netlify/lib/**"]
 
 # Pretty URLs for prerendered pages; existing files win before redirects.
 [[redirects]]
