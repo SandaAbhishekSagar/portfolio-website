@@ -30,5 +30,3 @@ dist-ssr
 .vercel
 
 scripts/test.tmp
-scripts/.record.cjs
-scripts/.resume-export.html

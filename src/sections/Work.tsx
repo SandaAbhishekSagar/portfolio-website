@@ -5,6 +5,17 @@ import Tilt from '../components/motion/Tilt';
 import Spotlight from '../components/motion/Spotlight';
 import { CLUSTERS, PROJECTS, type Project } from '../data/record';
 
+/** The heading counts the record, so the copy can never outrun the case studies. */
+const COUNT_WORDS: Record<number, string> = {
+  4: 'Four',
+  5: 'Five',
+  6: 'Six',
+  7: 'Seven',
+  8: 'Eight',
+  9: 'Nine',
+  10: 'Ten',
+};
+
 /**
  * WORK — the index.
  *
@@ -31,7 +42,7 @@ export default function Work() {
         <InView>
           <div className="mb-10 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <h3 className="u-display max-w-[20ch] text-[1.75rem] text-bone sm:text-[2.5rem]">
-              {PROJECTS.length === 6 ? 'Six' : PROJECTS.length} systems. Every one
+              {COUNT_WORDS[PROJECTS.length] ?? PROJECTS.length} systems. Every one
               opens to a full case study.
             </h3>
             <ul className="flex flex-wrap gap-2" aria-label="Filter by domain">

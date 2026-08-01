@@ -5,7 +5,6 @@ import AnimatedNumber from '../components/motion/AnimatedNumber';
 import TextLoop from '../components/motion/TextLoop';
 import TextShimmer from '../components/motion/TextShimmer';
 import SplineHero from '../components/spline/SplineHero';
-import { PROFILE } from '../data/record';
 
 const OPEN_TO = [
   'Applied AI Engineer',
@@ -57,17 +56,6 @@ export default function Hero() {
                 FastAPI, ChromaDB and Next.js — in production, not in a notebook.
               </p>
 
-              <p className="u-mono mt-5 text-[0.8125rem] tracking-[0.04em] text-amber">
-                Hear one live —{' '}
-                <a
-                  href={PROFILE.ivrTel}
-                  className="underline decoration-amber/40 underline-offset-4 hover:text-ember"
-                >
-                  {PROFILE.ivrPhone}
-                </a>
-                <span className="text-bone-dim/65"> · AI Interview Coach IVR</span>
-              </p>
-
               <div className="mt-9 flex flex-wrap items-center gap-3">
                 <Magnetic>
                   <a
@@ -77,12 +65,6 @@ export default function Hero() {
                     Book a call →
                   </a>
                 </Magnetic>
-                <a
-                  href={PROFILE.ivrTel}
-                  className="u-mono rounded-full border border-amber/40 px-6 py-3 text-amber transition-colors hover:border-ember hover:text-ember"
-                >
-                  Dial the IVR →
-                </a>
                 <a
                   href="#index"
                   className="u-mono rounded-full border border-bone/25 px-6 py-3 text-bone transition-colors hover:border-ember hover:text-ember"

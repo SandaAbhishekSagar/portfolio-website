@@ -24,19 +24,19 @@ export const PROFILE = {
   github: 'https://github.com/SandaAbhishekSagar',
   linkedin: 'https://www.linkedin.com/in/sandaabhisheksagar',
   site: 'https://www.abhisheksagarsanda.com',
-  /** Live AI Interview Coach IVR — dialable proof on the homepage. */
-  ivrPhone: '+1 (888) 805-6555',
-  ivrTel: 'tel:+18888056555',
-  resumePdf: '/Abhishek-Sagar-Sanda-Resume.pdf',
   summary:
     'Applied AI engineer building voice agents that answer real phone calls and retrieval systems that cite their sources. Most recently at AutoAce (YC F25) on the voice-agent OS for car dealerships — cut voice-loop latency 8.5s → 3.9s, backfilled dropped calls, and shipped a three-layer LiveKit fence in production.',
 } as const;
 
-/** Defaults baked into prerendered HTML for The Index (before /api/ask responds). */
+/**
+ * Prerender defaults for the live stations. These mirror the seeded Supabase
+ * rows so the static HTML shows the real index and toolchain instead of
+ * "loading…"; /api/ask and /api/content replace them once they answer.
+ */
 export const INDEX_DEFAULTS = {
   corpus: 23,
-  p50_ms: 0,
-  queries: 0,
+  p50_ms: 127,
+  queries: 23,
   suggestions: [
     'What has he shipped with voice agents?',
     'How does his RAG stack handle retrieval?',
@@ -45,14 +45,30 @@ export const INDEX_DEFAULTS = {
     'What does he do at AutoAce?',
   ],
   sources: [
-    'resume.md',
-    'projects/bitvoice-pay',
-    'projects/northeastern-assistant',
-    'projects/interview-coach-ivr',
-    'projects/wyckoff-trading-assistant',
-    'projects/manipuri-translator',
+    'resume.md#summary',
+    'resume.md#education',
+    'resume.md#contact',
+    'resume.md#skills',
+    'resume.md#autoace',
+    'resume.md#elevance-health',
   ],
 } as const;
+
+/** Mirrors the `skills` table, which groups by toolchain rather than by proof. */
+export const TOOLCHAIN_DEFAULTS = [
+  { name: 'Python', group_name: 'Languages' },
+  { name: 'TypeScript', group_name: 'Languages' },
+  { name: 'SQL', group_name: 'Languages' },
+  { name: 'Twilio Voice', group_name: 'Voice & telephony' },
+  { name: 'MurfAI TTS', group_name: 'Voice & telephony' },
+  { name: 'ChromaDB', group_name: 'Retrieval & ML' },
+  { name: 'PyTorch', group_name: 'Retrieval & ML' },
+  { name: 'OpenAI / Ollama', group_name: 'Retrieval & ML' },
+  { name: 'FastAPI', group_name: 'Backend & data' },
+  { name: 'Next.js', group_name: 'Backend & data' },
+  { name: 'Postgres / Supabase', group_name: 'Backend & data' },
+  { name: 'Docker / CUDA', group_name: 'Backend & data' },
+] as const;
 
 /* ──────────────────────────────────────────────────────────── experience ── */
 
@@ -360,11 +376,10 @@ export const PROJECTS: Project[] = [
       'Scores each answer on speech rate, filler words, confidence and clarity',
       'Tracks improvement across repeat sessions per user',
       'JWT-authenticated REST API over Sequelize',
-      'Live dial-in: +1 (888) 805-6555',
     ],
     repo: 'https://github.com/SandaAbhishekSagar/AI_Interview_Couch_IVR',
-    demo: 'tel:+18888056555',
-    demoLabel: 'Call +1 (888) 805-6555',
+    demo: null,
+    demoLabel: null,
   },
   {
     slug: 'wyckoff-trading-assistant',

@@ -3,15 +3,15 @@ import Section from '../components/Section';
 import InView from '../components/motion/InView';
 import Magnetic from '../components/motion/Magnetic';
 import Spotlight from '../components/motion/Spotlight';
-import { PROFILE, SKILLS as RECORD_SKILLS, SKILL_GROUPS } from '../data/record';
+import { PROFILE, TOOLCHAIN_DEFAULTS } from '../data/record';
 import { getContent, sendContact, type Skill } from '../lib/api';
 
-/** Prerender-safe toolchain from the canonical record (API can refine later). */
-const FALLBACK_SKILLS: Skill[] = RECORD_SKILLS.map((s, i) => ({
+/** Shown in prerendered HTML until /api/content answers with the live rows. */
+const FALLBACK_SKILLS: Skill[] = TOOLCHAIN_DEFAULTS.map((s, i) => ({
   id: i + 1,
   name: s.name,
-  group_name: s.group,
-  sort: i,
+  group_name: s.group_name,
+  sort: i + 1,
 }));
 
 export default function Contact() {
@@ -31,7 +31,7 @@ export default function Contact() {
       });
   }, []);
 
-  const groups = SKILL_GROUPS.filter((g) => skills.some((s) => s.group_name === g));
+  const groups = Array.from(new Set(skills.map((s) => s.group_name)));
 
   const submit = async (e: FormEvent) => {
     e.preventDefault();
@@ -122,15 +122,6 @@ export default function Contact() {
                     href={`mailto:${PROFILE.email}`}
                   >
                     {PROFILE.email}
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="u-mono text-bone underline decoration-bone/25 underline-offset-4 hover:text-ember"
-                    href={PROFILE.resumePdf}
-                    download
-                  >
-                    Resume PDF ↓
                   </a>
                 </li>
               </ul>
