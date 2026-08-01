@@ -24,8 +24,34 @@ export const PROFILE = {
   github: 'https://github.com/SandaAbhishekSagar',
   linkedin: 'https://www.linkedin.com/in/sandaabhisheksagar',
   site: 'https://www.abhisheksagarsanda.com',
+  /** Live AI Interview Coach IVR — dialable proof on the homepage. */
+  ivrPhone: '+1 (888) 805-6555',
+  ivrTel: 'tel:+18888056555',
+  resumePdf: '/Abhishek-Sagar-Sanda-Resume.pdf',
   summary:
-    'Applied AI engineer building voice agents that answer real phone calls and retrieval systems that cite their sources. Most recently at AutoAce (YC F25) on the voice-agent OS for car dealerships — telephony integration, latency reduction, and routing safeguards in production.',
+    'Applied AI engineer building voice agents that answer real phone calls and retrieval systems that cite their sources. Most recently at AutoAce (YC F25) on the voice-agent OS for car dealerships — cut voice-loop latency 8.5s → 3.9s, backfilled dropped calls, and shipped a three-layer LiveKit fence in production.',
+} as const;
+
+/** Defaults baked into prerendered HTML for The Index (before /api/ask responds). */
+export const INDEX_DEFAULTS = {
+  corpus: 23,
+  p50_ms: 0,
+  queries: 0,
+  suggestions: [
+    'What has he shipped with voice agents?',
+    'How does his RAG stack handle retrieval?',
+    'What award did he win and why?',
+    'Is he available and where?',
+    'What does he do at AutoAce?',
+  ],
+  sources: [
+    'resume.md',
+    'projects/bitvoice-pay',
+    'projects/northeastern-assistant',
+    'projects/interview-coach-ivr',
+    'projects/wyckoff-trading-assistant',
+    'projects/manipuri-translator',
+  ],
 } as const;
 
 /* ──────────────────────────────────────────────────────────── experience ── */
@@ -56,8 +82,8 @@ export const EXPERIENCE: Role[] = [
     stack: ['LiveKit', 'Telephony / SIP', 'Python', 'TypeScript', 'Next.js', 'Supabase'],
     bullets: [
       'Built the voice-agent OS for car dealerships: telephony integration carrying live inbound calls end to end.',
-      'Cut response latency in the voice loop and fixed race conditions surfacing under concurrent calls.',
-      'Added routing safeguards to LiveKit so calls fail over predictably instead of dropping mid-conversation.',
+      'Cut voice-loop latency 8.5s → 3.9s by parallelizing call startup, deduplicating graph fetches, and moving blocking TTS init off the async event loop.',
+      'Backfilled 13 dropped calls into recoverable sessions and shipped a three-layer LiveKit fence so concurrent calls fail over instead of dying mid-conversation.',
     ],
   },
   {
@@ -334,10 +360,11 @@ export const PROJECTS: Project[] = [
       'Scores each answer on speech rate, filler words, confidence and clarity',
       'Tracks improvement across repeat sessions per user',
       'JWT-authenticated REST API over Sequelize',
+      'Live dial-in: +1 (888) 805-6555',
     ],
     repo: 'https://github.com/SandaAbhishekSagar/AI_Interview_Couch_IVR',
-    demo: null,
-    demoLabel: null,
+    demo: 'tel:+18888056555',
+    demoLabel: 'Call +1 (888) 805-6555',
   },
   {
     slug: 'wyckoff-trading-assistant',
@@ -488,7 +515,7 @@ export const SKILLS: Skill[] = [
   {
     name: 'LiveKit',
     group: 'Voice & telephony',
-    use: 'Real-time call routing with failover safeguards under load.',
+    use: 'Three-layer call fence and failover routing under concurrent load.',
     proof: 'AutoAce',
     proofHref: '#trajectory',
   },

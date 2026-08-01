@@ -31,7 +31,8 @@ export default function Work() {
         <InView>
           <div className="mb-10 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <h3 className="u-display max-w-[20ch] text-[1.75rem] text-bone sm:text-[2.5rem]">
-              Ten systems. Every one opens to a full case study.
+              {PROJECTS.length === 6 ? 'Six' : PROJECTS.length} systems. Every one
+              opens to a full case study.
             </h3>
             <ul className="flex flex-wrap gap-2" aria-label="Filter by domain">
               {[{ key: 'all', label: 'All' }, ...CLUSTERS.map((c) => ({ key: c.key, label: c.label }))].map(

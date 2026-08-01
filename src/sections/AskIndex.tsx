@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import Section from '../components/Section';
 import InView from '../components/motion/InView';
 import BorderTrail from '../components/motion/BorderTrail';
+import { INDEX_DEFAULTS } from '../data/record';
 import { ask, getAskMeta, type AskMeta, type AskResult } from '../lib/api';
 
 /**
@@ -15,7 +16,13 @@ import { ask, getAskMeta, type AskMeta, type AskResult } from '../lib/api';
  * — here it means "this is running".
  */
 export default function AskIndex() {
-  const [meta, setMeta] = useState<AskMeta | null>(null);
+  const [meta, setMeta] = useState<AskMeta>(() => ({
+    corpus: INDEX_DEFAULTS.corpus,
+    p50_ms: INDEX_DEFAULTS.p50_ms,
+    queries: INDEX_DEFAULTS.queries,
+    suggestions: [...INDEX_DEFAULTS.suggestions],
+    sources: [...INDEX_DEFAULTS.sources],
+  }));
   const [q, setQ] = useState('');
   const [result, setResult] = useState<AskResult | null>(null);
   const [busy, setBusy] = useState(false);
@@ -68,11 +75,11 @@ export default function AskIndex() {
               <span className="mr-2 inline-block h-1.5 w-1.5 translate-y-[-1px] rounded-full bg-ember align-middle" />
               index live
             </span>
-            <span className="u-mono text-bone-dim/75">chunks {meta?.corpus ?? '—'}</span>
+            <span className="u-mono text-bone-dim/75">chunks {meta.corpus}</span>
             <span className="u-mono text-bone-dim/75">
-              p50 {result?.p50_ms ?? meta?.p50_ms ?? '—'} ms
+              p50 {(result?.p50_ms ?? meta.p50_ms) || '—'} ms
             </span>
-            <span className="u-mono text-bone-dim/75">queries {meta?.queries ?? '—'}</span>
+            <span className="u-mono text-bone-dim/75">queries {meta.queries}</span>
           </div>
 
           <form
@@ -102,7 +109,7 @@ export default function AskIndex() {
           </form>
 
           <div className="relative flex flex-wrap gap-2 px-5 pb-5">
-            {(meta?.suggestions ?? []).map((s) => (
+            {meta.suggestions.map((s) => (
               <button
                 key={s}
                 type="button"
@@ -166,7 +173,7 @@ export default function AskIndex() {
 
             {!busy && !result && !error && (
               <p className="u-mono px-5 py-6 text-bone-dim/60">
-                corpus: {(meta?.sources ?? []).slice(0, 6).join(' · ') || 'loading…'}
+                corpus: {meta.sources.slice(0, 6).join(' · ')}
               </p>
             )}
           </div>

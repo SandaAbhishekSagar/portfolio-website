@@ -8,6 +8,8 @@
     "build": "tsc -b && vite build && vite build --config vite.ssr.config.ts && node scripts/prerender.mjs && node scripts/check-centerpiece.mjs",
     "lint": "eslint .",
     "preview": "vite preview",
+    "export:og": "node scripts/export-og-png.mjs",
+    "export:resume": "node scripts/export-resume-pdf.mjs",
     "netlify:dev": "npx netlify-cli dev",
     "netlify:deploy": "npx netlify-cli deploy --prod"
   },

@@ -3,11 +3,19 @@ import Section from '../components/Section';
 import InView from '../components/motion/InView';
 import Magnetic from '../components/motion/Magnetic';
 import Spotlight from '../components/motion/Spotlight';
-import { PROFILE } from '../data/record';
+import { PROFILE, SKILLS as RECORD_SKILLS, SKILL_GROUPS } from '../data/record';
 import { getContent, sendContact, type Skill } from '../lib/api';
 
+/** Prerender-safe toolchain from the canonical record (API can refine later). */
+const FALLBACK_SKILLS: Skill[] = RECORD_SKILLS.map((s, i) => ({
+  id: i + 1,
+  name: s.name,
+  group_name: s.group,
+  sort: i,
+}));
+
 export default function Contact() {
-  const [skills, setSkills] = useState<Skill[]>([]);
+  const [skills, setSkills] = useState<Skill[]>(FALLBACK_SKILLS);
   const [form, setForm] = useState({ name: '', email: '', company: '', message: '' });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
@@ -15,11 +23,15 @@ export default function Contact() {
 
   useEffect(() => {
     getContent()
-      .then((d) => setSkills(d.skills))
-      .catch(() => setSkills([]));
+      .then((d) => {
+        if (d.skills?.length) setSkills(d.skills);
+      })
+      .catch(() => {
+        /* keep FALLBACK_SKILLS — never flash "loading…" in prerender */
+      });
   }, []);
 
-  const groups = Array.from(new Set(skills.map((s) => s.group_name)));
+  const groups = SKILL_GROUPS.filter((g) => skills.some((s) => s.group_name === g));
 
   const submit = async (e: FormEvent) => {
     e.preventDefault();
@@ -74,7 +86,6 @@ export default function Contact() {
                   </dd>
                 </div>
               ))}
-              {!skills.length && <p className="u-mono text-bone-dim/60">loading…</p>}
             </dl>
 
             <div className="mt-8 space-y-3 border-t border-bone/10 pt-6">
@@ -111,6 +122,15 @@ export default function Contact() {
                     href={`mailto:${PROFILE.email}`}
                   >
                     {PROFILE.email}
+                  </a>
+                </li>
+                <li>
+                  <a
+                    className="u-mono text-bone underline decoration-bone/25 underline-offset-4 hover:text-ember"
+                    href={PROFILE.resumePdf}
+                    download
+                  >
+                    Resume PDF ↓
                   </a>
                 </li>
               </ul>

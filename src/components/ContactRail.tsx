@@ -6,11 +6,17 @@ import { PROFILE } from '../data/record';
  * JavaScript disabled.
  */
 export default function ContactRail() {
-  const items = [
-    { href: `mailto:${PROFILE.email}`, label: 'Email', external: false },
+  const items: {
+    href: string;
+    label: string;
+    external?: boolean;
+    download?: boolean;
+  }[] = [
+    { href: `mailto:${PROFILE.email}`, label: 'Email' },
     { href: PROFILE.github, label: 'GitHub', external: true },
     { href: PROFILE.linkedin, label: 'LinkedIn', external: true },
-    { href: '/resume', label: 'Resume', external: false },
+    { href: PROFILE.resumePdf, label: 'Resume PDF', download: true },
+    { href: '/resume', label: 'Resume' },
   ];
 
   return (
@@ -27,6 +33,7 @@ export default function ContactRail() {
               <a
                 href={i.href}
                 {...(i.external ? { target: '_blank', rel: 'noreferrer noopener' } : {})}
+                {...(i.download ? { download: true } : {})}
                 className="u-mono block text-bone-dim hover:text-amber"
               >
                 {i.label} →
