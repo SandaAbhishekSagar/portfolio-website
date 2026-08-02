@@ -19,7 +19,7 @@ export const PROFILE = {
   name: 'Abhishek Sagar Sanda',
   title: 'Applied AI Engineer',
   location: 'Boston, MA',
-  availability: 'Open to full-time roles — available now.',
+  availability: 'Open to full-time roles - available now.',
   email: 'sabhisheksagar200@gmail.com',
   github: 'https://github.com/SandaAbhishekSagar',
   linkedin: 'https://www.linkedin.com/in/sandaabhisheksagar',
@@ -29,7 +29,7 @@ export const PROFILE = {
   ivrTel: 'tel:+18888056555',
   resumePdf: '/Abhishek-Sagar-Sanda-Resume.pdf',
   summary:
-    'Applied AI engineer building voice agents that answer real phone calls and retrieval systems that cite their sources. Most recently at AutoAce (YC F25) on the voice-agent OS for car dealerships — cut voice-loop latency 8.5s → 3.9s, backfilled dropped calls, and shipped a three-layer LiveKit fence in production.',
+    'Applied AI engineer building voice agents that answer real phone calls and retrieval systems that cite their sources. Most recently at AutoAce (YC F25) on the voice-agent OS for car dealerships - cut voice-loop latency 8.5s → 3.9s, backfilled dropped calls, and shipped a three-layer LiveKit fence in production.',
 } as const;
 
 /**
@@ -96,7 +96,7 @@ export const EXPERIENCE: Role[] = [
     role: 'Applied AI Engineer',
     org: 'AutoAce',
     orgNote: 'YC F25',
-    period: 'Jun 2026 \u2014 Jul 2026',
+    period: 'Jun 2026 - Jul 2026',
     location: 'Boston, MA',
     latest: true,
     stack: ['LiveKit', 'Telephony / SIP', 'Python', 'TypeScript', 'Next.js', 'Supabase'],
@@ -110,7 +110,7 @@ export const EXPERIENCE: Role[] = [
     slug: 'elevance-health',
     role: 'Developer',
     org: 'Elevance Health',
-    period: 'Apr 2026 \u2014 Jun 2026',
+    period: 'Apr 2026 - Jun 2026',
     location: 'Boston, MA',
     stack: ['.NET', 'C#', 'SQL Server', 'Azure'],
     bullets: [
@@ -122,7 +122,7 @@ export const EXPERIENCE: Role[] = [
     role: 'Teaching Assistant',
     org: 'Northeastern University',
     orgNote: 'College of Engineering',
-    period: 'Sep 2025 \u2014 Dec 2025',
+    period: 'Sep 2025 - Dec 2025',
     location: 'Boston, MA',
     stack: ['LLMs', 'Prompt engineering', 'Python'],
     bullets: [
@@ -133,7 +133,7 @@ export const EXPERIENCE: Role[] = [
     slug: 'virtual-presenz',
     role: 'Research Software Engineer',
     org: 'Virtual Presenz Inc.',
-    period: 'Sep 2024 \u2014 Dec 2025',
+    period: 'Sep 2024 - Dec 2025',
     location: 'Shrewsbury, MA',
     stack: ['YOLOv8', 'GPT-4', 'Python', 'PyTorch', 'OpenCV'],
     bullets: [
@@ -146,7 +146,7 @@ export const EXPERIENCE: Role[] = [
     slug: 'hcltech',
     role: 'Dotnet Developer',
     org: 'HCL Technologies',
-    period: 'Aug 2022 \u2014 Aug 2023',
+    period: 'Aug 2022 - Aug 2023',
     location: 'Chennai, India',
     stack: ['.NET', 'C#', 'SQL'],
     bullets: [
@@ -157,7 +157,7 @@ export const EXPERIENCE: Role[] = [
     slug: 'blackbuck',
     role: 'Artificial Intelligence Intern',
     org: 'Blackbuck',
-    period: 'Aug 2021 \u2014 Jul 2022',
+    period: 'Aug 2021 - Jul 2022',
     location: 'Remote',
     stack: ['Python', 'Machine learning'],
     bullets: [
@@ -168,7 +168,7 @@ export const EXPERIENCE: Role[] = [
     slug: 'iacademia',
     role: 'Summer Intern',
     org: 'iAcademia',
-    period: 'Apr 2020 \u2014 Oct 2020',
+    period: 'Apr 2020 - Oct 2020',
     location: 'Hyderabad, India',
     stack: ['Python'],
     bullets: [
@@ -209,7 +209,7 @@ export type Recognition = {
 
 export const AWARDS: Recognition[] = [
   {
-    title: "Outstanding Master's Student Award — Community Impact",
+    title: "Outstanding Master's Student Award - Community Impact",
     org: 'Northeastern University (MGEN Awards)',
     date: '2026',
     placement: 'One of four university-wide',
@@ -221,7 +221,7 @@ export const AWARDS: Recognition[] = [
 
 export const HACKATHONS: Recognition[] = [
   {
-    title: 'MIT Bitcoin Hackathon — BitVoice Pay',
+    title: 'MIT Bitcoin Hackathon - BitVoice Pay',
     org: 'Massachusetts Institute of Technology',
     date: '2026',
     placement: '2nd place',
@@ -230,7 +230,7 @@ export const HACKATHONS: Recognition[] = [
     url: 'https://github.com/SandaAbhishekSagar/BitVoice_Pay',
   },
   {
-    title: 'MIT × Weights & Biases Multi-Agent Hackathon — Denial Defense',
+    title: 'MIT × Weights & Biases Multi-Agent Hackathon - Denial Defense',
     org: 'MIT × Weights & Biases',
     date: '2026',
     placement: '3rd place',
@@ -259,7 +259,7 @@ export const HACKATHONS: Recognition[] = [
 
 export const PUBLICATIONS: Recognition[] = [
   {
-    title: 'TensorRT optimization — co-authored paper',
+    title: 'TensorRT optimization - co-authored paper',
     org: 'MIT IMPACT Symposium',
     date: '2025',
     detail:

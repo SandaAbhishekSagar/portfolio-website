@@ -75,7 +75,7 @@ export default function Resume() {
           {EXPERIENCE.map((r) => (
             <div key={r.slug} className="mt-4 break-inside-avoid">
               <h3 className="text-[1rem] font-bold">
-                {r.role} — {r.org}
+                {r.role} - {r.org}
                 {r.orgNote ? ` (${r.orgNote})` : ''}
               </h3>
               <p className="text-[0.85rem] italic">
@@ -116,7 +116,7 @@ export default function Resume() {
             {[...AWARDS, ...HACKATHONS].map((a) => (
               <li key={a.title}>
                 <strong>{a.title}</strong>
-                {a.placement ? ` — ${a.placement}` : ''} · {a.org} · {a.date}
+                {a.placement ? ` - ${a.placement}` : ''} · {a.org} · {a.date}
               </li>
             ))}
           </ul>
@@ -159,7 +159,7 @@ export default function Resume() {
           {PROJECTS.slice(0, 6).map((p) => (
             <div key={p.slug} className="mt-3 break-inside-avoid">
               <h3 className="text-[0.95rem] font-bold">
-                {p.title} — {p.metric.label}: {p.metric.value}
+                {p.title} - {p.metric.label}: {p.metric.value}
               </h3>
               <p className="text-[0.9rem] leading-relaxed">{p.summary}</p>
               <p className="text-[0.85rem]">

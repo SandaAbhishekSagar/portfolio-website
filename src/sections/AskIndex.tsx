@@ -140,7 +140,7 @@ export default function AskIndex() {
                   <p className="text-[1.0625rem] leading-[1.65] text-bone">{result.answer}</p>
                   <p className="u-mono mt-5 text-bone-dim/65">
                     latency {result.latency_ms} ms · p50 {result.p50_ms} ms · k={result.k} of{' '}
-                    {result.corpus} · {result.grounded ? 'grounded' : 'refused — out of corpus'}
+                    {result.corpus} · {result.grounded ? 'grounded' : 'refused - out of corpus'}
                   </p>
                 </div>
                 <div>

@@ -33,7 +33,7 @@ export default function Hero() {
             <InView>
               <p className="u-mono mb-9">
                 <span className="mr-2 inline-block h-1.5 w-1.5 translate-y-[-1px] rounded-full bg-ember align-middle" />
-                <TextShimmer>Boston, MA · open to full-time · available now</TextShimmer>
+                <TextShimmer>Boston, MA . open to full-time . available now</TextShimmer>
               </p>
             </InView>
 
@@ -53,7 +53,7 @@ export default function Hero() {
                 Applied AI engineer. I build voice agents that answer real phone
                 calls, retrieval systems that cite their sources, and the
                 full-stack product around both. Recent work runs on Twilio,
-                FastAPI, ChromaDB and Next.js — in production, not in a notebook.
+                FastAPI, ChromaDB and Next.js - in production, not in a notebook.
               </p>
 
               <div className="mt-9 flex flex-wrap items-center gap-3">

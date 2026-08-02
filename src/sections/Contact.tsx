@@ -91,7 +91,7 @@ export default function Contact() {
             <div className="mt-8 space-y-3 border-t border-bone/10 pt-6">
               <p className="u-mono text-bone-dim/70">Education</p>
               <p className="text-[0.9375rem] text-bone-dim">
-                MS, Information Systems — Northeastern University, Boston.
+                MS, Information Systems - Northeastern University, Boston.
                 Graduated December 2025.
               </p>
               <p className="u-mono pt-3 text-bone-dim/70">Elsewhere</p>
