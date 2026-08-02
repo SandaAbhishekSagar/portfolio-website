@@ -24,6 +24,10 @@ export const PROFILE = {
   github: 'https://github.com/SandaAbhishekSagar',
   linkedin: 'https://www.linkedin.com/in/sandaabhisheksagar',
   site: 'https://www.abhisheksagarsanda.com',
+  /** Live BitVoice Pay dial-in — shown on the case study, not the hero. */
+  ivrPhone: '+1 (888) 805-6555',
+  ivrTel: 'tel:+18888056555',
+  resumePdf: '/Abhishek-Sagar-Sanda-Resume.pdf',
   summary:
     'Applied AI engineer building voice agents that answer real phone calls and retrieval systems that cite their sources. Most recently at AutoAce (YC F25) on the voice-agent OS for car dealerships — cut voice-loop latency 8.5s → 3.9s, backfilled dropped calls, and shipped a three-layer LiveKit fence in production.',
 } as const;
@@ -222,7 +226,7 @@ export const HACKATHONS: Recognition[] = [
     date: '2026',
     placement: '2nd place',
     detail:
-      'A Lightning wallet operated entirely through a phone call, built for people who own a basic phone but not a smartphone.',
+      'A Lightning wallet operated entirely through a phone call, built for people who own a basic phone but not a smartphone. Live dial-in: +1 (888) 805-6555.',
     url: 'https://github.com/SandaAbhishekSagar/BitVoice_Pay',
   },
   {
@@ -319,10 +323,12 @@ export const PROJECTS: Project[] = [
       '2nd place at the MIT Bitcoin Hackathon 2026 (Arc VII)',
       'Internal transfers on the same LNbits node settle with zero routing fees',
       'Every user is issued a real Lightning wallet, not a simulation',
+      'Live dial-in: +1 (888) 805-6555',
+      'Walkthrough video: https://www.youtube.com/watch?v=a041bOCJK4k',
     ],
     repo: 'https://github.com/SandaAbhishekSagar/BitVoice_Pay',
-    demo: 'https://www.youtube.com/watch?v=a041bOCJK4k',
-    demoLabel: 'Walkthrough video',
+    demo: 'tel:+18888056555',
+    demoLabel: 'Call +1 (888) 805-6555',
   },
   {
     slug: 'northeastern-assistant',

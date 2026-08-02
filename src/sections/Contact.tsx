@@ -124,6 +124,15 @@ export default function Contact() {
                     {PROFILE.email}
                   </a>
                 </li>
+                <li>
+                  <a
+                    className="u-mono text-bone underline decoration-bone/25 underline-offset-4 hover:text-ember"
+                    href={PROFILE.resumePdf}
+                    download
+                  >
+                    Resume PDF ↓
+                  </a>
+                </li>
               </ul>
             </div>
           </div>

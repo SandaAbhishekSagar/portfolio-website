@@ -26,10 +26,17 @@ export default function Resume() {
           <a href="/" className="u-mono rounded border border-black/20 px-4 py-2 text-black">
             ← Back to site
           </a>
+          <a
+            href={PROFILE.resumePdf}
+            download
+            className="u-mono rounded bg-black px-4 py-2 text-white"
+          >
+            Download PDF
+          </a>
           <button
             type="button"
             onClick={() => window.print()}
-            className="u-mono rounded bg-black px-4 py-2 text-white"
+            className="u-mono rounded border border-black/20 px-4 py-2 text-black"
           >
             Print / Save as PDF
           </button>

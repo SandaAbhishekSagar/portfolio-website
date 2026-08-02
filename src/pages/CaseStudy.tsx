@@ -151,11 +151,13 @@ export default function CaseStudy({ slug }: { slug: string }) {
               {p.demo && (
                 <a
                   href={p.demo}
-                  target="_blank"
-                  rel="noreferrer noopener"
+                  {...(p.demo.startsWith('tel:')
+                    ? {}
+                    : { target: '_blank', rel: 'noreferrer noopener' })}
                   className="u-mono block text-amber underline decoration-amber/35 underline-offset-4"
                 >
-                  {p.demoLabel || 'Demo'} ↗
+                  {p.demoLabel || 'Demo'}
+                  {p.demo.startsWith('tel:') ? '' : ' ↗'}
                 </a>
               )}
               <a href="/#contact" className="u-mono block text-amber underline underline-offset-4">

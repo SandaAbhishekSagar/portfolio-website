@@ -14,7 +14,7 @@ const OPEN_TO = [
 ];
 
 const FACTS: { label: string; value: number; suffix?: string }[] = [
-  { label: 'Docs indexed', value: 76000, suffix: '+' },
+  { label: 'Docs indexed', value: 80000, suffix: '+' },
   { label: 'Voice loop budget', value: 800, suffix: ' ms' },
   { label: 'Retrieval accuracy', value: 95, suffix: '%' },
   { label: 'Hackathon build', value: 48, suffix: ' h' },
