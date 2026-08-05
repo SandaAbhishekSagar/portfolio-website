@@ -63,7 +63,7 @@ let pages = 0;
 total += emit(
   '/',
   renderToString(createElement(StaticApp, { route: '/' })),
-  'Applied AI Engineer, Voice Agents and RAG - Abhishek Sagar Sanda - Boston',
+  'Voice AI, RAG and Conversational AI Engineer - Abhishek Sagar Sanda - Boston',
   'Abhishek Sagar Sanda - Applied AI engineer in Boston building voice agents, RAG retrieval systems, LLMs, LiveKit telephony, and full-stack AI products. Open to full-time roles.'
 );
 pages++;
@@ -72,7 +72,7 @@ pages++;
 total += emit(
   '/resume',
   renderToString(createElement(StaticApp, { route: '/resume' })),
-  'Applied AI Engineer, Voice Agents and RAG - Resume - Abhishek Sagar Sanda - Boston',
+  'Voice AI, RAG and Conversational AI Engineer - Resume - Abhishek Sagar Sanda - Boston',
   `Resume of ${PROFILE.name}, Applied AI Engineer in ${PROFILE.location}. Voice agents, RAG, LLMs, experience, education, awards, and selected projects.`
 );
 pages++;
@@ -83,7 +83,7 @@ for (const p of PROJECTS) {
   total += emit(
     route,
     renderToString(createElement(StaticApp, { route })),
-    `${p.title} - Applied AI Engineer, Voice Agents and RAG - ${PROFILE.name} - Boston`,
+    `${p.title} - Voice AI, RAG and Conversational AI - ${PROFILE.name} - Boston`,
     p.summary.replace(/"/g, '&quot;')
   );
   pages++;
