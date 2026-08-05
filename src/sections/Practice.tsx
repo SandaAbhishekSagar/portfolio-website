@@ -128,8 +128,15 @@ export default function Practice() {
                 className="text-amber underline decoration-amber/35 underline-offset-4 hover:text-ember"
               >
                 AI agent engineer
-              </a>{' '}
-              or{' '}
+              </a>
+              ,{' '}
+              <a
+                href="/forward-deployed-engineer"
+                className="text-amber underline decoration-amber/35 underline-offset-4 hover:text-ember"
+              >
+                forward deployed engineer
+              </a>
+              , or{' '}
               <a
                 href="#contact"
                 className="text-amber underline decoration-amber/35 underline-offset-4 hover:text-ember"

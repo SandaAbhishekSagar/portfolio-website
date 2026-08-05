@@ -1,10 +1,10 @@
 import { PROFILE } from '../data/record';
 
 /**
- * Public landing page for the keyword "ai agent engineer".
- * Prerendered at /ai-agent-engineer so crawlers and Search Console see full HTML.
+ * Public landing page for the keyword "forward deployed engineer".
+ * Prerendered at /forward-deployed-engineer for crawlers and visitors.
  */
-export default function AiAgentEngineer() {
+export default function ForwardDeployedEngineer() {
   return (
     <main className="relative z-10">
       <article className="mx-auto max-w-[74rem] px-6 pt-28 pb-24 sm:px-10 sm:pt-36">
@@ -13,36 +13,36 @@ export default function AiAgentEngineer() {
         </a>
 
         <p className="u-mono mt-10 text-ember">Boston, MA · open to full-time</p>
-        <h1 className="u-display mt-4 max-w-[22ch] text-[2.25rem] text-bone sm:text-[3.5rem]">
-          AI Agent Engineer in Boston
+        <h1 className="u-display mt-4 max-w-[24ch] text-[2.25rem] text-bone sm:text-[3.5rem]">
+          Forward Deployed Engineer in Boston
         </h1>
         <p className="mt-6 max-w-[58ch] text-[1.0625rem] text-bone-dim">
-          {PROFILE.name} is an AI agent engineer building voice agents, retrieval
-          systems, and the full-stack product that keeps them reliable in
-          production - not only in a notebook.
+          {PROFILE.name} is a forward deployed engineer who sits with the
+          problem - shipping voice agents, RAG systems, and product surfaces into
+          real call paths and real users, not only into a staging slide.
         </p>
 
         <div className="mt-10 max-w-[62ch] space-y-5 text-[1.0625rem] leading-[1.7] text-bone-dim">
           <h2 className="u-display pt-2 text-[1.5rem] text-bone sm:text-[1.75rem]">
-            What an AI agent engineer ships
+            What a forward deployed engineer does
           </h2>
           <p>
-            An AI agent engineer designs systems that act under real constraints:
-            live phone calls, latency budgets near 800 milliseconds, tool use,
-            and failover when a model or network path fails. That means owning
-            telephony (Twilio, LiveKit), orchestration, evaluation, and the
-            product surface callers or users actually touch.
+            A forward deployed engineer embeds beside the customer or product
+            team, learns the operational constraint, and owns the path from
+            prototype to production. That means instrumentation, failover,
+            evaluation loops, and the last mile of integration - telephony,
+            data sources, and the UI callers or operators actually use.
           </p>
           <p>
-            As an AI agent engineer, Abhishek focuses on two production patterns:
-            conversational voice agents that answer inbound calls end to end, and
-            retrieval-augmented agents that cite sources or refuse when the corpus
-            does not support an answer. Both demand measurable loops - not demos
-            that only work on a laptop.
+            As a forward deployed engineer, Abhishek works backward from hard
+            budgets: response windows near 800 milliseconds on live calls,
+            retrieval that cites sources or refuses, and systems that stay up
+            when a model or network path fails. The job is outcomes in the
+            field, measured after deploy.
           </p>
 
           <h2 className="u-display pt-6 text-[1.5rem] text-bone sm:text-[1.75rem]">
-            Proof from shipped systems
+            Field proof from shipped systems
           </h2>
           <ul className="list-disc space-y-3 pl-5">
             <li>
@@ -53,8 +53,13 @@ export default function AiAgentEngineer() {
                 BitVoice Pay
               </a>
               {' - '}
-              voice-first Lightning wallet over a phone call; live dial-in proof
-              of agent behavior on Twilio.
+              voice-first Lightning wallet on a live dial-in; end-to-end agent
+              behavior on Twilio, not a mock.
+            </li>
+            <li>
+              AutoAce (YC F25) - voice-agent OS for dealerships: latency cut
+              8.5s → 3.9s, backfilled sessions, three-layer LiveKit fence under
+              real traffic constraints.
             </li>
             <li>
               <a
@@ -64,8 +69,8 @@ export default function AiAgentEngineer() {
                 Northeastern University Assistant
               </a>
               {' - '}
-              RAG over 80,000+ pages with citations, the retrieval half of agent
-              grounding.
+              RAG over 80,000+ pages with citations for operators who need
+              grounded answers.
             </li>
             <li>
               <a
@@ -75,35 +80,32 @@ export default function AiAgentEngineer() {
                 AI Interview Coach IVR
               </a>
               {' - '}
-              multi-turn interview coaching on a live call path.
-            </li>
-            <li>
-              AutoAce (YC F25) - voice-agent OS for dealerships: latency cut
-              8.5s → 3.9s, backfilled sessions, three-layer LiveKit fence.
+              multi-turn coaching on a live call path.
             </li>
           </ul>
 
           <h2 className="u-display pt-6 text-[1.5rem] text-bone sm:text-[1.75rem]">
-            Hire an AI agent engineer
+            Hire a forward deployed engineer
           </h2>
           <p>
-            Based in Boston and available for full-time roles, Abhishek works with
-            Series A–C teams that need an AI agent engineer to take voice and
-            retrieval products from prototype to dependable service. Related:{' '}
+            Based in Boston and available for full-time roles, Abhishek joins
+            teams that need a forward deployed engineer to take AI products from
+            pilot to dependable service - voice, retrieval, and the full stack
+            around them. Related role pages:{' '}
             <a
-              href="/forward-deployed-engineer"
+              href="/ai-agent-engineer"
               className="text-amber underline decoration-amber/35 underline-offset-4 hover:text-ember"
             >
-              forward deployed engineer
+              AI agent engineer
             </a>
-            . Start with the{' '}
+            . See{' '}
             <a
               href="/#work"
               className="text-amber underline decoration-amber/35 underline-offset-4 hover:text-ember"
             >
               selected work
             </a>
-            , read the{' '}
+            , the{' '}
             <a
               href="/resume"
               className="text-amber underline decoration-amber/35 underline-offset-4 hover:text-ember"

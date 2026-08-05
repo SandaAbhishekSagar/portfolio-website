@@ -5,6 +5,7 @@ const LINKS = [
   { href: '/#work', label: 'Work' },
   { href: '/#about', label: 'About' },
   { href: '/ai-agent-engineer', label: 'AI Agent' },
+  { href: '/forward-deployed-engineer', label: 'FDE' },
   { href: '/#trajectory', label: 'Trajectory' },
   { href: '/#index', label: 'Ask' },
 ];

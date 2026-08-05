@@ -107,6 +107,15 @@ total += emit(
 );
 pages++;
 
+// Keyword landing - public subpage for "forward deployed engineer".
+total += emit(
+  '/forward-deployed-engineer',
+  renderToString(createElement(StaticApp, { route: '/forward-deployed-engineer' })),
+  'Forward Deployed Engineer in Boston - Abhishek Sagar Sanda | Voice AI & RAG',
+  'Hire a forward deployed engineer in Boston. Abhishek Sagar Sanda embeds with teams to ship voice agents, RAG systems, and production AI into real call paths.'
+);
+pages++;
+
 // One prerendered case study per project.
 for (const p of PROJECTS) {
   const route = `/work/${p.slug}`;
@@ -129,6 +138,7 @@ const today = new Date().toISOString().slice(0, 10);
 const urls = [
   { loc: '/', priority: '1.0', freq: 'weekly' },
   { loc: '/ai-agent-engineer', priority: '0.9', freq: 'weekly' },
+  { loc: '/forward-deployed-engineer', priority: '0.9', freq: 'weekly' },
   { loc: '/resume', priority: '0.9', freq: 'monthly' },
   ...PROJECTS.map((p) => ({
     loc: `/work/${p.slug}`,
