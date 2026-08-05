@@ -59,21 +59,21 @@ function emit(route, markup, title, description) {
 let total = 0;
 let pages = 0;
 
-// Home — the full record in one document.
+// Home - keyword-rich title for SERPs (name + role keywords + city).
 total += emit(
   '/',
   renderToString(createElement(StaticApp, { route: '/' })),
-  `${PROFILE.name} — ${PROFILE.title}, Boston`,
-  'Applied AI engineer in Boston. Voice agents, retrieval systems, and full-stack AI products. Complete work history, projects, and recognition.'
+  'Abhishek Sagar Sanda - Applied AI Engineer, Voice Agents & RAG | Boston',
+  'Abhishek Sagar Sanda - Applied AI engineer in Boston building voice agents, RAG retrieval systems, LLMs, LiveKit telephony, and full-stack AI products. Open to full-time roles.'
 );
 pages++;
 
-// Resume mode — ATS parsers and print pipelines read this without JS.
+// Resume mode - ATS parsers and print pipelines read this without JS.
 total += emit(
   '/resume',
   renderToString(createElement(StaticApp, { route: '/resume' })),
-  `${PROFILE.name} — Resume`,
-  `Resume of ${PROFILE.name}, ${PROFILE.title} in ${PROFILE.location}. Experience, education, awards, publications, and selected projects.`
+  'Resume - Abhishek Sagar Sanda | Applied AI Engineer, Voice Agents, RAG | Boston',
+  `Resume of ${PROFILE.name}, Applied AI Engineer in ${PROFILE.location}. Voice agents, RAG, LLMs, experience, education, awards, and selected projects.`
 );
 pages++;
 
@@ -83,7 +83,7 @@ for (const p of PROJECTS) {
   total += emit(
     route,
     renderToString(createElement(StaticApp, { route })),
-    `${p.title} — ${PROFILE.name}`,
+    `${p.title} - Case Study | Applied AI, Voice & RAG | ${PROFILE.name}`,
     p.summary.replace(/"/g, '&quot;')
   );
   pages++;
