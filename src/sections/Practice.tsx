@@ -136,6 +136,13 @@ export default function Practice() {
               >
                 forward deployed engineer
               </a>
+              ,{' '}
+              <a
+                href="/full-stack-ai-engineer"
+                className="text-amber underline decoration-amber/35 underline-offset-4 hover:text-ember"
+              >
+                full-stack AI engineer
+              </a>
               , or{' '}
               <a
                 href="#contact"

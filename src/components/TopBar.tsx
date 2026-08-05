@@ -6,6 +6,7 @@ const LINKS = [
   { href: '/#about', label: 'About' },
   { href: '/ai-agent-engineer', label: 'AI Agent' },
   { href: '/forward-deployed-engineer', label: 'FDE' },
+  { href: '/full-stack-ai-engineer', label: 'Full-Stack AI' },
   { href: '/#trajectory', label: 'Trajectory' },
   { href: '/#index', label: 'Ask' },
 ];

@@ -116,6 +116,15 @@ total += emit(
 );
 pages++;
 
+// Keyword landing - public subpage for "full-stack ai engineer".
+total += emit(
+  '/full-stack-ai-engineer',
+  renderToString(createElement(StaticApp, { route: '/full-stack-ai-engineer' })),
+  'Full-Stack AI Engineer in Boston - Abhishek Sagar Sanda | Voice AI & RAG',
+  'Hire a full-stack AI engineer in Boston. Abhishek Sagar Sanda builds voice agents, RAG systems, FastAPI backends, and Next.js product surfaces end to end.'
+);
+pages++;
+
 // One prerendered case study per project.
 for (const p of PROJECTS) {
   const route = `/work/${p.slug}`;
@@ -139,6 +148,7 @@ const urls = [
   { loc: '/', priority: '1.0', freq: 'weekly' },
   { loc: '/ai-agent-engineer', priority: '0.9', freq: 'weekly' },
   { loc: '/forward-deployed-engineer', priority: '0.9', freq: 'weekly' },
+  { loc: '/full-stack-ai-engineer', priority: '0.9', freq: 'weekly' },
   { loc: '/resume', priority: '0.9', freq: 'monthly' },
   ...PROJECTS.map((p) => ({
     loc: `/work/${p.slug}`,

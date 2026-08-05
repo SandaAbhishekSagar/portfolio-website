@@ -1,10 +1,10 @@
 import { PROFILE } from '../data/record';
 
 /**
- * Public landing page for the keyword "forward deployed engineer".
- * Prerendered at /forward-deployed-engineer for crawlers and visitors.
+ * Public landing page for the keyword "full-stack ai engineer".
+ * Prerendered at /full-stack-ai-engineer for crawlers and visitors.
  */
-export default function ForwardDeployedEngineer() {
+export default function FullStackAiEngineer() {
   return (
     <main className="relative z-10">
       <article className="mx-auto max-w-[74rem] px-6 pt-28 pb-24 sm:px-10 sm:pt-36">
@@ -14,35 +14,33 @@ export default function ForwardDeployedEngineer() {
 
         <p className="u-mono mt-10 text-ember">Boston, MA · open to full-time</p>
         <h1 className="u-display mt-4 max-w-[24ch] text-[2.25rem] text-bone sm:text-[3.5rem]">
-          Forward Deployed Engineer in Boston
+          Full-Stack AI Engineer in Boston
         </h1>
         <p className="mt-6 max-w-[58ch] text-[1.0625rem] text-bone-dim">
-          {PROFILE.name} is a forward deployed engineer who sits with the
-          problem - shipping voice agents, RAG systems, and product surfaces into
-          real call paths and real users, not only into a staging slide.
+          {PROFILE.name} is a full-stack AI engineer who owns the model loop and
+          the product surface - FastAPI backends, Next.js clients, voice
+          telephony, and retrieval stacks that cite sources in production.
         </p>
 
         <div className="mt-10 max-w-[62ch] space-y-5 text-[1.0625rem] leading-[1.7] text-bone-dim">
           <h2 className="u-display pt-2 text-[1.5rem] text-bone sm:text-[1.75rem]">
-            What a forward deployed engineer does
+            What a full-stack AI engineer ships
           </h2>
           <p>
-            A forward deployed engineer embeds beside the customer or product
-            team, learns the operational constraint, and owns the path from
-            prototype to production. That means instrumentation, failover,
-            evaluation loops, and the last mile of integration - telephony,
-            data sources, and the UI callers or operators actually use.
+            A full-stack AI engineer does not stop at a notebook. They design
+            the API, the orchestration, the evaluation harness, and the UI or
+            call path users actually hit - then keep latency, citations, and
+            failover honest under load.
           </p>
           <p>
-            As a forward deployed engineer, Abhishek works backward from hard
-            budgets: response windows near 800 milliseconds on live calls,
-            retrieval that cites sources or refuses, and systems that stay up
-            when a model or network path fails. The job is outcomes in the
-            field, measured after deploy.
+            As a full-stack AI engineer, Abhishek builds across Python and
+            TypeScript: voice agents on Twilio and LiveKit, RAG over large
+            corpora with ChromaDB-style retrieval, and product surfaces that
+            expose measurable behavior rather than slide-deck demos.
           </p>
 
           <h2 className="u-display pt-6 text-[1.5rem] text-bone sm:text-[1.75rem]">
-            Field proof from shipped systems
+            Proof across the stack
           </h2>
           <ul className="list-disc space-y-3 pl-5">
             <li>
@@ -53,13 +51,8 @@ export default function ForwardDeployedEngineer() {
                 BitVoice Pay
               </a>
               {' - '}
-              voice-first Lightning wallet on a live dial-in; end-to-end agent
-              behavior on Twilio, not a mock.
-            </li>
-            <li>
-              AutoAce (YC F25) - voice-agent OS for dealerships: latency cut
-              8.5s → 3.9s, backfilled sessions, three-layer LiveKit fence under
-              real traffic constraints.
+              voice-first Lightning wallet end to end: telephony, agent loop,
+              and live dial-in proof.
             </li>
             <li>
               <a
@@ -69,8 +62,12 @@ export default function ForwardDeployedEngineer() {
                 Northeastern University Assistant
               </a>
               {' - '}
-              RAG over 80,000+ pages with citations for operators who need
-              grounded answers.
+              RAG over 80,000+ pages with citations, retrieval plus product
+              surface.
+            </li>
+            <li>
+              AutoAce (YC F25) - voice-agent OS for dealerships: latency cut
+              8.5s → 3.9s, backfilled sessions, three-layer LiveKit fence.
             </li>
             <li>
               <a
@@ -80,18 +77,17 @@ export default function ForwardDeployedEngineer() {
                 AI Interview Coach IVR
               </a>
               {' - '}
-              multi-turn coaching on a live call path.
+              multi-turn interview coaching on a live call path.
             </li>
           </ul>
 
           <h2 className="u-display pt-6 text-[1.5rem] text-bone sm:text-[1.75rem]">
-            Hire a forward deployed engineer
+            Hire a full-stack AI engineer
           </h2>
           <p>
             Based in Boston and available for full-time roles, Abhishek joins
-            teams that need a forward deployed engineer to take AI products from
-            pilot to dependable service - voice, retrieval, and the full stack
-            around them. Related role pages:{' '}
+            teams that need a full-stack AI engineer to take voice and retrieval
+            products from prototype to dependable service. Related role pages:{' '}
             <a
               href="/ai-agent-engineer"
               className="text-amber underline decoration-amber/35 underline-offset-4 hover:text-ember"
@@ -100,10 +96,10 @@ export default function ForwardDeployedEngineer() {
             </a>
             ,{' '}
             <a
-              href="/full-stack-ai-engineer"
+              href="/forward-deployed-engineer"
               className="text-amber underline decoration-amber/35 underline-offset-4 hover:text-ember"
             >
-              full-stack AI engineer
+              forward deployed engineer
             </a>
             . See{' '}
             <a

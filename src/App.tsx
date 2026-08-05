@@ -14,6 +14,7 @@ import CaseStudy from './pages/CaseStudy';
 import Resume from './pages/Resume';
 import AiAgentEngineer from './pages/AiAgentEngineer';
 import ForwardDeployedEngineer from './pages/ForwardDeployedEngineer';
+import FullStackAiEngineer from './pages/FullStackAiEngineer';
 
 /**
  * The home page. One column of content, no full-bleed background effect.
@@ -41,6 +42,7 @@ function Home() {
  *   /resume                      print-ready record
  *   /ai-agent-engineer           keyword landing (public, prerendered)
  *   /forward-deployed-engineer   keyword landing (public, prerendered)
+ *   /full-stack-ai-engineer      keyword landing (public, prerendered)
  *   /work/{slug}                 case study
  */
 export function Routed({ route }: { route: string }) {
@@ -49,6 +51,7 @@ export function Routed({ route }: { route: string }) {
   if (clean === '/resume') return <Resume />;
   if (clean === '/ai-agent-engineer') return <AiAgentEngineer />;
   if (clean === '/forward-deployed-engineer') return <ForwardDeployedEngineer />;
+  if (clean === '/full-stack-ai-engineer') return <FullStackAiEngineer />;
 
   if (clean.startsWith('/work/')) {
     const slug = clean.slice('/work/'.length);
