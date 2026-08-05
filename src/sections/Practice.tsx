@@ -122,7 +122,21 @@ export default function Practice() {
               As a conversational AI engineer, he ships agents that feel natural
               on a live phone call rather than only in a demo reel - owning
               latency budgets, citations, and production failover for teams that
-              need dependable services, not slides.
+              need dependable services, not slides. For a focused role page, see{' '}
+              <a
+                href="/ai-agent-engineer"
+                className="text-amber underline decoration-amber/35 underline-offset-4 hover:text-ember"
+              >
+                AI agent engineer
+              </a>{' '}
+              or{' '}
+              <a
+                href="#contact"
+                className="text-amber underline decoration-amber/35 underline-offset-4 hover:text-ember"
+              >
+                book a call
+              </a>
+              .
             </p>
           </div>
         </InView>

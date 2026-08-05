@@ -32,7 +32,7 @@ const { PROJECTS, PROFILE } = await import(
 const template = fs.readFileSync(path.join(dist, 'index.html'), 'utf8');
 
 function head(title, description, canonical) {
-  return template
+  let html = template
     .replace(/<title>[\s\S]*?<\/title>/, `<title>${title}</title>`)
     .replace(
       /<meta name="description"[^>]*>/,
@@ -41,7 +41,28 @@ function head(title, description, canonical) {
     .replace(
       /<link rel="canonical"[^>]*>/,
       `<link rel="canonical" href="${canonical}" />`
+    )
+    .replace(
+      /<meta property="og:url"[^>]*>/,
+      `<meta property="og:url" content="${canonical}" />`
+    )
+    .replace(
+      /<meta\s+property="og:title"[^>]*>/,
+      `<meta property="og:title" content="${title}" />`
+    )
+    .replace(
+      /<meta\s+property="og:description"[^>]*>/,
+      `<meta property="og:description" content="${description}" />`
+    )
+    .replace(
+      /<meta\s+name="twitter:title"[^>]*>/,
+      `<meta name="twitter:title" content="${title}" />`
+    )
+    .replace(
+      /<meta\s+name="twitter:description"[^>]*>/,
+      `<meta name="twitter:description" content="${description}" />`
     );
+  return html;
 }
 
 function emit(route, markup, title, description) {
@@ -77,6 +98,15 @@ total += emit(
 );
 pages++;
 
+// Keyword landing - public subpage for "ai agent engineer".
+total += emit(
+  '/ai-agent-engineer',
+  renderToString(createElement(StaticApp, { route: '/ai-agent-engineer' })),
+  'AI Agent Engineer in Boston - Abhishek Sagar Sanda | Voice AI & RAG',
+  'Hire an AI agent engineer in Boston. Abhishek Sagar Sanda builds voice agents, RAG systems, and production AI agent loops on Twilio, LiveKit, and FastAPI.'
+);
+pages++;
+
 // One prerendered case study per project.
 for (const p of PROJECTS) {
   const route = `/work/${p.slug}`;
@@ -98,6 +128,7 @@ for (const p of PROJECTS) {
 const today = new Date().toISOString().slice(0, 10);
 const urls = [
   { loc: '/', priority: '1.0', freq: 'weekly' },
+  { loc: '/ai-agent-engineer', priority: '0.9', freq: 'weekly' },
   { loc: '/resume', priority: '0.9', freq: 'monthly' },
   ...PROJECTS.map((p) => ({
     loc: `/work/${p.slug}`,

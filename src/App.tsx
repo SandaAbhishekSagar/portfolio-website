@@ -12,6 +12,7 @@ import AskIndex from './sections/AskIndex';
 import Contact from './sections/Contact';
 import CaseStudy from './pages/CaseStudy';
 import Resume from './pages/Resume';
+import AiAgentEngineer from './pages/AiAgentEngineer';
 
 /**
  * The home page. One column of content, no full-bleed background effect.
@@ -35,14 +36,16 @@ function Home() {
 /**
  * Route resolution shared by the browser app and the prerenderer, so the static
  * HTML and the hydrated app always agree on what a URL renders.
- *   /                 home
- *   /resume           print-ready record
- *   /work/{slug}      case study
+ *   /                     home
+ *   /resume               print-ready record
+ *   /ai-agent-engineer    keyword landing (public, prerendered)
+ *   /work/{slug}          case study
  */
 export function Routed({ route }: { route: string }) {
   const clean = route.replace(/\/+$/, '') || '/';
 
   if (clean === '/resume') return <Resume />;
+  if (clean === '/ai-agent-engineer') return <AiAgentEngineer />;
 
   if (clean.startsWith('/work/')) {
     const slug = clean.slice('/work/'.length);

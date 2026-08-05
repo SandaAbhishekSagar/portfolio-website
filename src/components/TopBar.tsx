@@ -2,11 +2,11 @@ import { useEffect, useState } from 'react';
 import ScrollProgress from './motion/ScrollProgress';
 
 const LINKS = [
-  { href: '#work', label: 'Work' },
-  { href: '#about', label: 'About' },
-  { href: '#trajectory', label: 'Trajectory' },
-  { href: '#recognition', label: 'Recognition' },
-  { href: '#index', label: 'Ask' },
+  { href: '/#work', label: 'Work' },
+  { href: '/#about', label: 'About' },
+  { href: '/ai-agent-engineer', label: 'AI Agent' },
+  { href: '/#trajectory', label: 'Trajectory' },
+  { href: '/#index', label: 'Ask' },
 ];
 
 export default function TopBar() {
@@ -26,7 +26,7 @@ export default function TopBar() {
       }`}
     >
       <div className="mx-auto flex max-w-[74rem] items-center justify-between gap-4 px-6 py-4 sm:px-10">
-        <a href="#top" className="u-mono text-bone hover:text-ember">
+        <a href="/" className="u-mono text-bone hover:text-ember">
           A. S. Sanda
         </a>
 
@@ -39,7 +39,7 @@ export default function TopBar() {
         </nav>
 
         <a
-          href="#contact"
+          href="/#contact"
           className="u-mono rounded-full border border-amber/45 bg-amber/10 px-4 py-1.5 text-amber transition-colors hover:bg-amber hover:text-void"
         >
           Book a call

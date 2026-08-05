@@ -10,6 +10,7 @@ export default function ContactRail() {
     { href: `mailto:${PROFILE.email}`, label: 'Email', external: false },
     { href: PROFILE.github, label: 'GitHub', external: true },
     { href: PROFILE.linkedin, label: 'LinkedIn', external: true },
+    { href: '/ai-agent-engineer', label: 'AI Agent', external: false },
     { href: '/resume', label: 'Resume', external: false },
   ];
 
