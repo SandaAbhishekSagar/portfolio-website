@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import TopBar from './components/TopBar';
 import ContactRail from './components/ContactRail';
 import Hero from './sections/Hero';
+import Practice from './sections/Practice';
 import Work from './sections/Work';
 import About from './sections/About';
 import Trajectory from './sections/Trajectory';
@@ -19,6 +20,7 @@ function Home() {
   return (
     <main className="relative z-10">
       <Hero />
+      <Practice />
       <Work />
       <About />
       <Trajectory />

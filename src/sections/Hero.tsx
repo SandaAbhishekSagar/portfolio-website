@@ -50,10 +50,11 @@ export default function Hero() {
 
             <InView>
               <p className="mt-9 max-w-[48ch] text-[1.0625rem] text-bone-dim">
-                Applied AI engineer. I build voice agents that answer real phone
-                calls, retrieval systems that cite their sources, and the
-                full-stack product around both. Recent work runs on Twilio,
-                FastAPI, ChromaDB and Next.js - in production, not in a notebook.
+                Voice AI and retrieval engineer in Boston. I build agents that
+                answer real phone calls, RAG systems that cite their sources, and
+                the full-stack product around both - work that calls for a
+                conversational AI engineer who ships in production, not only in a
+                notebook. Recent stacks: Twilio, FastAPI, ChromaDB, Next.js.
               </p>
 
               <div className="mt-9 flex flex-wrap items-center gap-3">

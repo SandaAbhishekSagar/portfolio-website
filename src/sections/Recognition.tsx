@@ -46,7 +46,7 @@ function Group({ title, items, accent }: { title: string; items: R[]; accent: st
 /** Awards, hackathon placements, and the publication as distinct typed groups. */
 export default function Recognition() {
   return (
-    <Section id="recognition" index="04" label="Recognition">
+    <Section id="recognition" index="05" label="Recognition">
       <div className="pb-24">
         <InView>
           <h3 className="u-display mb-3 max-w-[24ch] text-[1.75rem] text-bone sm:text-[2.5rem]">

@@ -42,7 +42,7 @@ function AboutVisual() {
 
 export default function About() {
   return (
-    <Section id="about" index="02" label="About · how he works">
+    <Section id="about" index="03" label="About · how he works">
       <div className="grid gap-12 pb-24 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
         <div>
           <InView>

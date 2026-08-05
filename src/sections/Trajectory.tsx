@@ -14,7 +14,7 @@ export default function Trajectory() {
   const [open, setOpen] = useState<string>(EXPERIENCE[0].slug);
 
   return (
-    <Section id="trajectory" index="03" label="Trajectory · employment history">
+    <Section id="trajectory" index="04" label="Trajectory · employment history">
       <div className="pb-24">
         <InView>
           <h3 className="u-display mb-3 max-w-[22ch] text-[1.75rem] text-bone sm:text-[2.5rem]">

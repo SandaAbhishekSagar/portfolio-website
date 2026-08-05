@@ -8,7 +8,7 @@ import { SKILLS, SKILL_GROUPS } from '../data/record';
  */
 export default function Skills() {
   return (
-    <Section id="skills" index="05" label="Skills · with proof">
+    <Section id="skills" index="06" label="Skills · with proof">
       <div className="pb-24">
         <InView>
           <h3 className="u-display mb-3 max-w-[24ch] text-[1.75rem] text-bone sm:text-[2.5rem]">

@@ -52,7 +52,7 @@ export default function AskIndex() {
   };
 
   return (
-    <Section id="index" index="06" label="The index · grounded retrieval">
+    <Section id="index" index="07" label="The index · grounded retrieval">
       <div className="pb-24">
         <InView>
           <div className="mb-8 grid gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">

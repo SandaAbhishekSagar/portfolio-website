@@ -37,7 +37,7 @@ export default function Work() {
     shown.find((p) => p.slug === activeSlug) ?? shown[0] ?? PROJECTS[0];
 
   return (
-    <Section id="work" index="01" label="Selected work">
+    <Section id="work" index="02" label="Selected work">
       <div className="pb-24">
         <InView>
           <div className="mb-10 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">

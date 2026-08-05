@@ -57,7 +57,7 @@ export default function Contact() {
     'w-full rounded-md border bg-void px-4 py-3 text-[0.9375rem] text-bone placeholder:text-bone-dim/45 focus:outline-none';
 
   return (
-    <Section id="contact" index="07" label="Contact">
+    <Section id="contact" index="08" label="Contact">
       <div className="pb-16">
         <InView>
           <h3 className="u-display mb-12 max-w-[20ch] text-[1.75rem] text-bone sm:text-[2.5rem]">
