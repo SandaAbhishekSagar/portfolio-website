@@ -64,7 +64,7 @@ total += emit(
   '/',
   renderToString(createElement(StaticApp, { route: '/' })),
   'Voice AI, RAG Engineer and Conversational AI Engineer - Abhishek Sagar Sanda - Boston',
-  'Abhishek Sagar Sanda - Applied AI engineer in Boston building voice agents, RAG retrieval systems, LLMs, LiveKit telephony, and full-stack AI products. Open to full-time roles.'
+  'Seeking a Voice AI specialist in Boston? Abhishek Sagar Sanda, a skilled RAG engineer and conversational AI engineer, builds AI agent systems.'
 );
 pages++;
 
