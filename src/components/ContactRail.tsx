@@ -13,6 +13,7 @@ export default function ContactRail() {
     { href: '/ai-agent-engineer', label: 'AI Agent', external: false },
     { href: '/forward-deployed-engineer', label: 'FDE', external: false },
     { href: '/full-stack-ai-engineer', label: 'Full-Stack AI', external: false },
+    { href: '/ml-platform-engineer', label: 'ML Platform', external: false },
     { href: '/resume', label: 'Resume', external: false },
   ];
 

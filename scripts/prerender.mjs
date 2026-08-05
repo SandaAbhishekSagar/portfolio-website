@@ -125,6 +125,15 @@ total += emit(
 );
 pages++;
 
+// Keyword landing - public subpage for "ml platform engineer".
+total += emit(
+  '/ml-platform-engineer',
+  renderToString(createElement(StaticApp, { route: '/ml-platform-engineer' })),
+  'ML Platform Engineer in Boston - Abhishek Sagar Sanda | Voice AI & RAG',
+  'Hire an ML platform engineer in Boston. Abhishek Sagar Sanda builds retrieval platforms, voice agent runtimes, and production evaluation loops for dependable AI.'
+);
+pages++;
+
 // One prerendered case study per project.
 for (const p of PROJECTS) {
   const route = `/work/${p.slug}`;
@@ -149,6 +158,7 @@ const urls = [
   { loc: '/ai-agent-engineer', priority: '0.9', freq: 'weekly' },
   { loc: '/forward-deployed-engineer', priority: '0.9', freq: 'weekly' },
   { loc: '/full-stack-ai-engineer', priority: '0.9', freq: 'weekly' },
+  { loc: '/ml-platform-engineer', priority: '0.9', freq: 'weekly' },
   { loc: '/resume', priority: '0.9', freq: 'monthly' },
   ...PROJECTS.map((p) => ({
     loc: `/work/${p.slug}`,

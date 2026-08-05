@@ -1,10 +1,10 @@
 import { PROFILE } from '../data/record';
 
 /**
- * Public landing page for the keyword "full-stack ai engineer".
- * Prerendered at /full-stack-ai-engineer for crawlers and visitors.
+ * Public landing page for the keyword "ml platform engineer".
+ * Prerendered at /ml-platform-engineer for crawlers and visitors.
  */
-export default function FullStackAiEngineer() {
+export default function MlPlatformEngineer() {
   return (
     <main className="relative z-10">
       <article className="mx-auto max-w-[74rem] px-6 pt-28 pb-24 sm:px-10 sm:pt-36">
@@ -14,46 +14,36 @@ export default function FullStackAiEngineer() {
 
         <p className="u-mono mt-10 text-ember">Boston, MA · open to full-time</p>
         <h1 className="u-display mt-4 max-w-[24ch] text-[2.25rem] text-bone sm:text-[3.5rem]">
-          Full-Stack AI Engineer in Boston
+          ML Platform Engineer in Boston
         </h1>
         <p className="mt-6 max-w-[58ch] text-[1.0625rem] text-bone-dim">
-          {PROFILE.name} is a full-stack AI engineer who owns the model loop and
-          the product surface - FastAPI backends, Next.js clients, voice
-          telephony, and retrieval stacks that cite sources in production.
+          {PROFILE.name} is an ML platform engineer who builds the rails under
+          production AI - retrieval corpora, voice agent runtimes, evaluation
+          loops, and failover - so models become dependable services.
         </p>
 
         <div className="mt-10 max-w-[62ch] space-y-5 text-[1.0625rem] leading-[1.7] text-bone-dim">
           <h2 className="u-display pt-2 text-[1.5rem] text-bone sm:text-[1.75rem]">
-            What a full-stack AI engineer ships
+            What an ML platform engineer owns
           </h2>
           <p>
-            A full-stack AI engineer does not stop at a notebook. They design
-            the API, the orchestration, the evaluation harness, and the UI or
-            call path users actually hit - then keep latency, citations, and
-            failover honest under load.
+            An ML platform engineer turns model experiments into operable
+            systems: ingestion and indexing for retrieval, orchestration for
+            agent loops, latency budgets, observability, and the path from
+            staging to a live call or product surface.
           </p>
           <p>
-            As a full-stack AI engineer, Abhishek builds across Python and
-            TypeScript: voice agents on Twilio and LiveKit, RAG over large
-            corpora with ChromaDB-style retrieval, and product surfaces that
-            expose measurable behavior rather than slide-deck demos.
+            As an ML platform engineer, Abhishek focuses on platforms that keep
+            voice and RAG workloads honest - ChromaDB-style corpora with
+            citations, LiveKit and Twilio runtimes near 800-millisecond
+            response windows, and fences that fail closed when a model or
+            network path breaks.
           </p>
 
           <h2 className="u-display pt-6 text-[1.5rem] text-bone sm:text-[1.75rem]">
-            Proof across the stack
+            Platform proof from shipped systems
           </h2>
           <ul className="list-disc space-y-3 pl-5">
-            <li>
-              <a
-                href="/work/bitvoice-pay"
-                className="text-amber underline decoration-amber/35 underline-offset-4 hover:text-ember"
-              >
-                BitVoice Pay
-              </a>
-              {' - '}
-              voice-first Lightning wallet end to end: telephony, agent loop,
-              and live dial-in proof.
-            </li>
             <li>
               <a
                 href="/work/northeastern-assistant"
@@ -62,12 +52,23 @@ export default function FullStackAiEngineer() {
                 Northeastern University Assistant
               </a>
               {' - '}
-              RAG over 80,000+ pages with citations, retrieval plus product
-              surface.
+              RAG platform over 80,000+ pages with citations, the retrieval
+              half of grounded answers.
             </li>
             <li>
               AutoAce (YC F25) - voice-agent OS for dealerships: latency cut
               8.5s → 3.9s, backfilled sessions, three-layer LiveKit fence.
+            </li>
+            <li>
+              <a
+                href="/work/bitvoice-pay"
+                className="text-amber underline decoration-amber/35 underline-offset-4 hover:text-ember"
+              >
+                BitVoice Pay
+              </a>
+              {' - '}
+              voice-first Lightning wallet on a live dial-in; agent runtime on
+              Twilio end to end.
             </li>
             <li>
               <a
@@ -82,12 +83,12 @@ export default function FullStackAiEngineer() {
           </ul>
 
           <h2 className="u-display pt-6 text-[1.5rem] text-bone sm:text-[1.75rem]">
-            Hire a full-stack AI engineer
+            Hire an ML platform engineer
           </h2>
           <p>
             Based in Boston and available for full-time roles, Abhishek joins
-            teams that need a full-stack AI engineer to take voice and retrieval
-            products from prototype to dependable service. Related role pages:{' '}
+            teams that need an ML platform engineer to take voice and retrieval
+            workloads from pilot to operable service. Related role pages:{' '}
             <a
               href="/ai-agent-engineer"
               className="text-amber underline decoration-amber/35 underline-offset-4 hover:text-ember"
@@ -96,17 +97,17 @@ export default function FullStackAiEngineer() {
             </a>
             ,{' '}
             <a
+              href="/full-stack-ai-engineer"
+              className="text-amber underline decoration-amber/35 underline-offset-4 hover:text-ember"
+            >
+              full-stack AI engineer
+            </a>
+            ,{' '}
+            <a
               href="/forward-deployed-engineer"
               className="text-amber underline decoration-amber/35 underline-offset-4 hover:text-ember"
             >
               forward deployed engineer
-            </a>
-            ,{' '}
-            <a
-              href="/ml-platform-engineer"
-              className="text-amber underline decoration-amber/35 underline-offset-4 hover:text-ember"
-            >
-              ML platform engineer
             </a>
             . See{' '}
             <a

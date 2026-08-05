@@ -143,6 +143,13 @@ export default function Practice() {
               >
                 full-stack AI engineer
               </a>
+              ,{' '}
+              <a
+                href="/ml-platform-engineer"
+                className="text-amber underline decoration-amber/35 underline-offset-4 hover:text-ember"
+              >
+                ML platform engineer
+              </a>
               , or{' '}
               <a
                 href="#contact"
