@@ -60,9 +60,9 @@ export default function Contact() {
     <Section id="contact" index="08" label="Contact">
       <div className="pb-16">
         <InView>
-          <h3 className="u-display mb-12 max-w-[20ch] text-[1.75rem] text-bone sm:text-[2.5rem]">
-            Hiring for voice or retrieval? Start here.
-          </h3>
+          <h2 className="u-display mb-12 max-w-[28ch] text-[1.75rem] text-bone sm:text-[2.5rem]">
+            Contact an Applied AI and Voice AI Specialist Today
+          </h2>
         </InView>
 
         <div className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">

@@ -28,9 +28,9 @@ export default function Section({
         <InView>
           <div className="flex items-center gap-4 pt-20 pb-12">
             <span className="u-mono text-ember">{index}</span>
-            <h2 id={`${id}-label`} className="u-mono text-bone-dim">
+            <p id={`${id}-label`} className="u-mono text-bone-dim">
               {label}
-            </h2>
+            </p>
             <span className="u-rule flex-1" aria-hidden="true" />
           </div>
         </InView>

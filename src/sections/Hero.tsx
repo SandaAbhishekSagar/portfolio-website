@@ -21,8 +21,8 @@ const FACTS: { label: string; value: number; suffix?: string }[] = [
 ];
 
 /**
- * The hero is text first: the name and the claim paint from HTML and CSS with
- * no dependency on WebGL. The 3D object sits in its own column to the side.
+ * The hero is text first: the name paints as brand display; the single <h1>
+ * carries Voice AI, RAG engineer, and Boston for search.
  */
 export default function Hero() {
   return (
@@ -37,12 +37,18 @@ export default function Hero() {
               </p>
             </InView>
 
-            <h1 className="u-display text-[2.5rem] text-bone sm:text-[4rem] lg:text-[6.5rem]">
+            <p className="u-display text-[2.5rem] text-bone sm:text-[4rem] lg:text-[6.5rem]">
               <TextEffect>Abhishek Sagar Sanda</TextEffect>
-            </h1>
+            </p>
 
             <InView>
-              <p className="u-mono mt-7 flex flex-wrap items-baseline gap-x-3 text-bone-dim/70">
+              <h1 className="u-mono mt-7 max-w-[40ch] text-[0.9375rem] leading-relaxed tracking-[0.04em] text-ember sm:text-[1.0625rem]">
+                Expert Voice AI &amp; RAG Engineer in Boston, MA
+              </h1>
+            </InView>
+
+            <InView>
+              <p className="u-mono mt-5 flex flex-wrap items-baseline gap-x-3 text-bone-dim/70">
                 <span>Open to</span>
                 <TextLoop items={OPEN_TO} className="text-ember" />
               </p>
