@@ -1,4 +1,7 @@
 import { PROFILE } from '../data/record';
+import DocumentTitle from '../components/DocumentTitle';
+
+const PAGE_TITLE = 'Full-Stack AI Engineer in Boston - Abhishek Sagar Sanda';
 
 /**
  * Public landing page for the keyword "full-stack ai engineer".
@@ -7,6 +10,7 @@ import { PROFILE } from '../data/record';
 export default function FullStackAiEngineer() {
   return (
     <main className="relative z-10">
+      <DocumentTitle title={PAGE_TITLE} />
       <article className="mx-auto max-w-[74rem] px-6 pt-28 pb-24 sm:px-10 sm:pt-36">
         <a href="/" className="u-mono text-bone-dim hover:text-ember">
           ← Home

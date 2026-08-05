@@ -120,7 +120,7 @@ pages++;
 total += emit(
   '/full-stack-ai-engineer',
   renderToString(createElement(StaticApp, { route: '/full-stack-ai-engineer' })),
-  'Hire a Full-Stack AI Engineer in Boston | Abhishek Sagar Sanda',
+  'Full-Stack AI Engineer in Boston - Abhishek Sagar Sanda',
   'Hire a full-stack AI engineer in Boston. Abhishek Sagar Sanda builds voice agents, RAG systems, FastAPI backends, and Next.js product surfaces end to end.'
 );
 pages++;
