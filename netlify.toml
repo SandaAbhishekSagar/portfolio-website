@@ -30,6 +30,19 @@
   status = 200
   force = true
 
+# Collapse http / apex / trailing variants onto the https www canonical.
+[[redirects]]
+  from = "http://abhisheksagarsanda.com/*"
+  to = "https://www.abhisheksagarsanda.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://abhisheksagarsanda.com/*"
+  to = "https://www.abhisheksagarsanda.com/:splat"
+  status = 301
+  force = true
+
 # Client-side routes that are not prerendered as folders fall back to home shell.
 [[redirects]]
   from = "/*"

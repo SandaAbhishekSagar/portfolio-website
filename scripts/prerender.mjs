@@ -31,7 +31,47 @@ const { PROJECTS, PROFILE } = await import(
 
 const template = fs.readFileSync(path.join(dist, 'index.html'), 'utf8');
 
-function head(title, description, canonical) {
+function rewriteJsonLd(html, route, title, canonical) {
+  return html.replace(
+    /<script type="application\/ld\+json">([\s\S]*?)<\/script>/,
+    (_match, raw) => {
+      const data = JSON.parse(raw);
+      const graph = data['@graph'] ?? [];
+
+      if (route === '/') {
+        // Homepage is the only ProfilePage; Google requires mainEntity.
+        data['@graph'] = graph.map((node) => {
+          if (node['@type'] !== 'ProfilePage') return node;
+          return {
+            ...node,
+            url: canonical,
+            name: title,
+            mainEntity: { '@id': `${PROFILE.site}/#person` },
+            about: { '@id': `${PROFILE.site}/#person` },
+          };
+        });
+      } else {
+        // Case studies / keyword landings are WebPages, not ProfilePages.
+        data['@graph'] = graph.map((node) => {
+          if (node['@type'] !== 'ProfilePage') return node;
+          return {
+            '@type': 'WebPage',
+            '@id': `${canonical}#webpage`,
+            url: canonical,
+            name: title,
+            isPartOf: { '@id': `${PROFILE.site}/#website` },
+            about: { '@id': `${PROFILE.site}/#person` },
+            author: { '@id': `${PROFILE.site}/#person` },
+          };
+        });
+      }
+
+      return `<script type="application/ld+json">\n${JSON.stringify(data, null, 2)}\n    </script>`;
+    }
+  );
+}
+
+function head(title, description, canonical, route = '/') {
   let html = template
     .replace(/<title>[\s\S]*?<\/title>/, `<title>${title}</title>`)
     .replace(
@@ -62,12 +102,12 @@ function head(title, description, canonical) {
       /<meta\s+name="twitter:description"[^>]*>/,
       `<meta name="twitter:description" content="${description}" />`
     );
-  return html;
+  return rewriteJsonLd(html, route, title, canonical);
 }
 
 function emit(route, markup, title, description) {
   const canonical = `${PROFILE.site}${route === '/' ? '/' : route}`;
-  const html = head(title, description, canonical).replace(
+  const html = head(title, description, canonical, route).replace(
     '<div id="root"></div>',
     `<div id="root">${markup}</div>`
   );
